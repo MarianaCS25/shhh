@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Market</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+    <script src="script.js"></script>
+
+    <header>
+        <h1 class="glitch" data-text="DEEP MARKET">DEEP MARKET</h1>
+        <p class="misterioso">Todo lo que buscas... y lo que no.</p>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+          <!-- Sección del mensaje de premio -->
+    <div id="mensaje-premio" class="mensaje-premio">
+        <p>¡FELICIDADES! Eres el usuario 1,666, ¡RECLAMA TU PREMIO!</p>
+            <p> Elige alguno de los siguientes artículos... Si te atreves</p>
+        <button id="cerrar-mensaje">Cerrar</button>
+    </div>
+    
+    <div class="intro">
+        <h2>⛧ TRANSMISIÓN INTERCEPTADA ⛧</h2>
+        <p><strong>ERROR 666:</strong> No deberías estar aquí.</p>
+        <p>Escuchamos tus pasos. Sentimos tu respiración. La transacción ha comenzado y no puedes salir.</p>
+        <p><em>Bienvenido al mercado de los condenados.</em></p>
+        <p><strong>Advertencia:</strong> Algunos artículos exigen un precio más alto que el dinero.</p>
+    </div>
+
+    <!-- Sección de productos -->
+    <section id="productos" class="productos">
+        <!-- Artículo 1 -->
+        <div class="producto">
+            <img src="misterio.jpg" alt="Artículo Misterioso">
+            <h2>Artículo Misterioso</h2>
+            <p class="precio">$66.66</p>
+            <a href="#" class="boton-comprar" onclick="event.preventDefault(); añadirAlCarrito('Llaves Perdidas', 13.13)">Añadir al carrito</a>
+        </div>
+
+        <!-- Artículo 2 -->
+        <div class="producto">
+            <img src="llave.jpg" alt="Llave Perdida">
+            <h2>Llaves Perdidas</h2>
+            <p class="precio">$13.13</p>
+            <a href="#" class="boton-comprar" onclick="event.preventDefault(); añadirAlCarrito('Llaves Perdidas', 13.13)">Añadir al carrito</a>
+        </div>
+
+        <!-- Artículo 3-->
+    <div class="producto">
+        <img src="mascara.jpg" alt="Mascara Oscura">
+        <h2></h2>RMascara Oscura</h2>
+        <p class="precio">$77.00</p>
+        <a href="#" class="boton-comprar" onclick="event.preventDefault(); añadirAlCarrito('Llaves Perdidas', 13.13)">Añadir al carrito</a>
+    </div>
+        
+        <!-- Artículo 4 -->
+        <div class="producto">
+            <img src="anillo.jpg" alt="Cinta VHS Perdida">
+            <h2>Anillo Familiar</h2>
+            <p class="precio">$1,000.00</p>
+            <a href="#" class="boton-comprar" onclick="event.preventDefault(); añadirAlCarrito('Llaves Perdidas', 13.13)">Añadir al carrito</a>
+        </div>
+
+        <!-- Artículo 5 -->
+        <div class="producto">
+            <img src="espejo.jpg" alt="Muñeco Maldito">
+            <h2>Espejo Intrigante</h2>
+            <p class="precio">$120.00</p>
+            <a href="#" class="boton-comprar" onclick="event.preventDefault(); añadirAlCarrito('Llaves Perdidas', 13.13)">Añadir al carrito</a>
+        </div>
+
+        <!-- Artículo 6 -->
+        <div class="producto">
+            <img src="caja.jpg" alt="Caja Sellada">
+            <h2>Caja Sellada</h2>
+            <p class="precio">$88.88</p>
+            <a href="#" class="boton-comprar" onclick="event.preventDefault(); añadirAlCarrito('Llaves Perdidas', 13.13)">Añadir al carrito</a>
+        </div>
+
+        <!-- Artículo 7 -->
+        <div class="producto">
+            <img src="cuadro.jpg" alt="Retrato Maldito">
+            <h2>Retrato Maldito</h2>
+            <p class="precio">$1,500.00</p>
+            <a href="#" class="boton-comprar" onclick="event.preventDefault(); añadirAlCarrito('Llaves Perdidas', 13.13)">Añadir al carrito</a>
+        </div>
+
+</section>
+
+    <!-- Carrito -->
+    <div id="carrito">
+        <a href="#" id="carrito-enlace" onclick="event.preventDefault(); verCarrito()">Ver Carrito (0)</a>
+    </div>
+    
+
+    <!-- Modal de carrito -->
+    <div id="carrito-modal" class="carrito-modal" style="display:none;">
+        <h2>Carrito de Compras</h2>
+        <div id="productos-carrito"></div> <!-- Aquí se mostrarán los productos -->
+        <button onclick="vaciarCarrito()">Vaciar carrito</button>
+        <button onclick="confirmarCompra()">Confirmar compra</button>
+        <button onclick="cerrarCarrito()">Cerrar</button>
+    </div>
+
+    <!-- Mensaje de confirmación -->
+    <div id="mensaje-confirmacion" style="display:none;">
+        <p>𝙏𝙐 𝙁𝙄𝙉 𝙀𝙎𝙏Á 𝘾𝙀𝙍𝘾𝘼... 𝙏𝙪 𝙘𝙤𝙢𝙥𝙧𝙖 𝙝𝙖 𝙨𝙞𝙙𝙤 𝙥𝙧𝙤𝙘𝙚𝙨𝙖𝙙𝙖...𝙋𝙚𝙧𝙤 𝙖𝙝𝙤𝙧𝙖 𝙩𝙚 𝙚𝙨𝙩á𝙣 𝙫𝙞𝙚𝙣𝙙𝙤...</p>
+        <button onclick="cerrarMensaje()">Cerrar</button>
+    </div>
+
+    <button id="boton-subir" onclick="subirInicio()">▲</button>
+<script>
+    window.onscroll = function() {
+        let boton = document.getElementById("boton-subir");
+        if (document.documentElement.scrollTop > 100) {
+            boton.style.display = "block";
+        } else {
+            boton.style.display = "none";
+        }
+    };
+
+    function subirInicio() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+
+    <footer id="contacto">
+        <p>Contacto: deepmarket@darkmail.com</p>
+        <p>&copy; 2025 Deep Market. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+

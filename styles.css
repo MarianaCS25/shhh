@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+body {
+    background-color: black;
+    text-align: center;
+    padding: 50px 20px;
+    transition: background-color 2s ease-in-out;
+}
+
+header {
+    padding: 20px;
+    background: darkred;
+    box-shadow: 0 0 15px red;
+    position:static;
+    font-family: 'Creepster';
+    font-size: 25px;
+    color:#E42727;
+    
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: antiquewhite;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+/* Estilos para el mensaje de premio */
+.mensaje-premio {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #e42727;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    display: none;  /* Inicialmente oculto */
+    z-index: 1000;
+    font-family: 'Rubik Glitch Regular';
+}
+
+.mensaje-premio button {
+    background-color: darkred;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    font-family: 'Creepster';
+}
+
+.mensaje-premio button:hover {
+    background-color: black;
+}
+
+
+.intro {
+    position: relative;
+    display: inline-block;
+    color: antiquewhite;
+    animation: glitch 1s infinite;
+    font-family: 'Rubik Glitch Regular';
+}
+
+.productos {
+    font-family: 'Eater';
+    color:#A462E1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.producto {
+    background: #111;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px red;
+    transition: transform 0.3s;
+}
+
+.producto:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px red;
+}
+
+.producto img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+}
+
+
+.precio {
+    font-size: 1.5rem;
+    color: antiquewhite;
+}
+
+.boton-comprar {
+    display: inline-block;
+    background: darkred;
+    color: antiquewhite;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px red;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.boton-comprar:hover {
+    background: black;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px red;
+}
+
+#carrito {
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Eater';
+    display: inline-block;
+    background: antiquewhite;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px red;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#carrito-enlace {
+    text-decoration: none;
+    color: darkred;
+}
+
+#carrito-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: antiquewhite;
+    padding: 20px;
+    overflow-y: auto;
+    display: none;
+    font-family: 'Eater';
+}
+
+#carrito-modal button {
+    background-color: darkred;
+    color: antiquewhite;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: 'Rubik Glitch Regular';
+}
+
+#mensaje-confirmacion {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    color: antiquewhite;
+    text-align: center;
+    display: none;
+}
+
+#mensaje-confirmacion button {
+    background-color: darkred;
+    color: antiquewhite;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    font-family: 'Creepster';
+    margin-top: 30px;
+    padding: 20px;
+    background: darkred;
+    box-shadow: 0 0 15px red;
+    position:static;
+}
+
+
+/* Botón para subir al inicio */
+#boton-subir {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: red;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    display: none;
+    transition: background 0.3s;
+}
+
+#boton-subir:hover {
+    background: darkred;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    h1.glitch {
+        font-size: 1.8em;
+    }
+
+    .intro {
+        font-size: 1em;
+    }
+}
+
+
+
+@font-face {
+    font-family: 'Creepster';
+    src: url(pagina_corto/fuentes/Creepster-Regular.ttf);
+  }  
+  
+  @font-face {
+    font-family: 'Rubik Glitch Regular';
+    src: url(pagina_corto/fuentes/RubikGlitch-Regular.ttf);
+  }
+  
+  @font-face {
+    font-family: 'Eater';
+    src: url(pagina_corto/fuentes/Eater-Regular.ttf);
+  }
